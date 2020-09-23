@@ -26,7 +26,7 @@ class _CalculateCurrencyScreenState extends State<CalculateCurrencyScreen> {
           title: Text('kanyimaX'),
           actions: <Widget>[
             IconButton(
-              icon: Text("💹"),
+              icon: Text("💹", style: TextStyle(fontSize: 22)),
               onPressed: () async {
                 await model.navigateToHomeView();
                 model.refreshFavorites();
