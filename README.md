@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # kanyimax
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# Blockchain_EXchange_Flutter
+Flutter application that show recent exchange rates of bitcoin values of different currency, and converter for different currencies
+>>>>>>> dd18c3730502de3f59bb32be9110b50be9ef900d
