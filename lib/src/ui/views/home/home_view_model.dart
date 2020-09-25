@@ -2,10 +2,9 @@ import 'package:kanyimax/src/app/generated/locator/locator.dart';
 import 'package:kanyimax/src/app/models/blockchain_ticker.model.dart';
 import 'package:kanyimax/src/app/services/api_service.dart';
 import 'package:kanyimax/src/ui/global/custom_base_view_model.dart';
-
 import 'package:kanyimax/src/app/generated/router/router.gr.dart';
-
 import 'package:stacked_services/stacked_services.dart';
+import '../../../app/generated/locator/locator.dart';
 
 class HomeViewModel extends CustomBaseViewModel {
   final ApiService _apiService = locator<ApiService>();
