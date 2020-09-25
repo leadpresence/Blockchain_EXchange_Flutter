@@ -122,4 +122,9 @@ class CalculateScreenViewModel extends CustomBaseViewModel {
   Future navigateToHomeView() async {
     await _navigationService.pushNamedAndRemoveUntil(Routes.homeView);
   }
+
+  //navigate to favorites
+  Future navigateToFavoritesView() async {
+    await _navigationService.pushNamedAndRemoveUntil(Routes.favoritesView);
+  }
 }

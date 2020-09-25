@@ -21,6 +21,10 @@ class FavoritesViewModel extends CustomBaseViewModel {
 
   List<FavoritePresentation> get choices => _choices;
 
+  Future initialize() async {
+    loadData();
+  }
+
   void loadData() async {
     final rates = await _currencyService.getAllExchangeRates();
     _favorites = await _currencyService.getFavoriteCurrencies();

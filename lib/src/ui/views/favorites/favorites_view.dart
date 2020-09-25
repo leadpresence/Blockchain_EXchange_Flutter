@@ -21,6 +21,7 @@ class _FavoritesViewState extends State<FavoritesView> {
             Scaffold(
               appBar: AppBar(
                 title: Text('Select Currencies'),
+                automaticallyImplyLeading: true,
               ),
               body: ListView.builder(
                 itemCount: model.choices.length,

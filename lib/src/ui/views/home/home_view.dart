@@ -91,6 +91,7 @@ class HomeView extends StatelessWidget {
                   ? null
                   : () async {
                       model.setBusy(true);
+                      //make request to refresh rates on Api
                       await model.getTickerData();
                       model.setBusy(false);
                     },

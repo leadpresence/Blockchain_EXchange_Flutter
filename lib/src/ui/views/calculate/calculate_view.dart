@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../app/generated/locator/locator.dart';
 import 'calculate_view_model.dart';
-
 import 'package:stacked/stacked.dart';
 
 class CalculateCurrencyScreen extends StatefulWidget {
@@ -29,9 +27,15 @@ class _CalculateCurrencyScreenState extends State<CalculateCurrencyScreen> {
               icon: Text("💹", style: TextStyle(fontSize: 22)),
               onPressed: () async {
                 await model.navigateToHomeView();
+              },
+            ),
+            IconButton(
+              icon: Text("🔖", style: TextStyle(fontSize: 22)),
+              onPressed: () async {
+                await model.navigateToFavoritesView();
                 model.refreshFavorites();
               },
-            )
+            ),
           ],
         ),
         body: Column(
