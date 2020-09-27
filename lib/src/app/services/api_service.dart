@@ -8,11 +8,14 @@ class ApiService {
   final String baseUrl = "https://www.blockchain.com";
 
   Future getTickerData() async {
-    Response response = await httpClient.get("$baseUrl/ticker");
+    try {
+      Response response = await httpClient.get("$baseUrl/ticker");
+      BlockchainTicker blockchainTicker =
+          BlockchainTicker.fromJson(response.body);
 
-    BlockchainTicker blockchainTicker =
-        BlockchainTicker.fromJson(response.body);
-
-    return blockchainTicker;
+      return blockchainTicker;
+    } on Exception catch (e) {
+      print('error=> [ $e ] reaching $baseUrl');
+    }
   }
 }

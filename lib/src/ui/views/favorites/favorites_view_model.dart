@@ -7,6 +7,7 @@ import '../../../app/models/currency.model.dart';
 import '../../../app/services/currency/currency_service.dart';
 import '../../../app/generated/locator/locator.dart';
 import '../../../app/utils/iso_data.dart';
+import 'package:kanyimax/src/app/generated/router/router.gr.dart';
 
 class FavoritesViewModel extends CustomBaseViewModel {
   /**
@@ -84,6 +85,11 @@ class FavoritesViewModel extends CustomBaseViewModel {
       }
     }
     _currencyService.saveFavoriteCurrencies(_favorites);
+  }
+
+  Future navigateToHomeView() async {
+    print('##calling calculateCurrencyScreen');
+    await _navigationService.pushNamedAndRemoveUntil(Routes.homeView);
   }
 }
 

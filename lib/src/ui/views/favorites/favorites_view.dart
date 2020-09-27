@@ -22,6 +22,19 @@ class _FavoritesViewState extends State<FavoritesView> {
               appBar: AppBar(
                 title: Text('Select Currencies'),
                 automaticallyImplyLeading: true,
+                actions: [
+                  IconButton(
+                    icon: Text(
+                      "🏠",
+                      style: TextStyle(fontSize: 20),
+                    ),
+                    onPressed: model.isBusy
+                        ? null
+                        : () async {
+                            await model.navigateToHomeView();
+                          },
+                  ),
+                ],
               ),
               body: ListView.builder(
                 itemCount: model.choices.length,
