@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'calculate_view_model.dart';
 import 'package:stacked/stacked.dart';
+import 'package:ndialog/ndialog.dart';
 
 class CalculateCurrencyScreen extends StatefulWidget {
   @override
@@ -36,6 +37,43 @@ class _CalculateCurrencyScreenState extends State<CalculateCurrencyScreen> {
                 model.refreshFavorites();
               },
             ),
+            IconButton(
+              icon: Text(
+                "💱",
+                style: TextStyle(fontSize: 20),
+              ),
+              onPressed: model.isBusy
+                  ? null
+                  : () async {
+                      await model.navigateToFavoritesView();
+                    },
+            ),
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: model.isBusy
+                  ? null
+                  : () async {
+                      DialogBackground(
+                        color: Colors.black.withOpacity(.55),
+                        blur: 0,
+                        dialog: NDialog(
+                            title: Text("Alert Dialog"),
+                            content: Container(
+                                height: 120,
+                                width: 190,
+                                child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      ListTile(
+                                        title: Text("Eze"),
+                                        leading: Radio(
+                                          value: "dark theme",
+                                        ),
+                                      )
+                                    ]))),
+                      ).show(context);
+                    },
+            )
           ],
         ),
         body: Column(

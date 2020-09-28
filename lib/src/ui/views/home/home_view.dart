@@ -1,11 +1,12 @@
 import 'dart:async';
 
+// import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:kanyimax/src/app/models/currency_ticker.model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:stacked/stacked.dart';
 import 'package:kanyimax/src/ui/widgets/dumb/skeleton.dart';
-
+import 'package:ndialog/ndialog.dart';
 import './home_view_model.dart';
 
 class HomeView extends StatelessWidget {
@@ -107,6 +108,22 @@ class HomeView extends StatelessWidget {
                       await model.navigateToCalculateView();
                     },
             ),
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: model.isBusy
+                  ? null
+                  : () async {
+                      print("pressed the menu icon");
+
+                      NDialog(
+                        title: Text("Test"),
+                        dialogStyle: DialogStyle(
+                          animatePopup: false,
+                        ),
+                        content: Text("Iya iya"),
+                      ).show(context);
+                    },
+            )
           ],
           body: model.blockchainTicker == null
               ? Center(

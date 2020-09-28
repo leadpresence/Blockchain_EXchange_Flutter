@@ -12,7 +12,8 @@ import '../../../app/utils/iso_data.dart';
 class CalculateScreenViewModel extends CustomBaseViewModel {
   final CurrencyService _currencyService = locator<CurrencyService>();
   final NavigationService _navigationService = locator<NavigationService>();
-
+  int group = 1;
+  int get _group => group;
   //initialize currency string formating
   CurrencyPresentation _baseCurrency = defaultBaseCurrency;
   CurrencyPresentation get baseCurrency => _baseCurrency;
@@ -126,5 +127,15 @@ class CalculateScreenViewModel extends CustomBaseViewModel {
   //navigate to favorites
   Future navigateToFavoritesView() async {
     await _navigationService.pushNamedAndRemoveUntil(Routes.favoritesView);
+  }
+
+  lightThemeselection(T) {
+    print("light them selected");
+    group = T;
+  }
+
+  darkThemeselection(T) {
+    print("Dark them selected");
+    group = T;
   }
 }

@@ -35,7 +35,10 @@ dependencies:
   cupertino_icons: ^1.0.0
   font_awesome_flutter: ^8.8.1
   #theme manager
-  stacked_themes: ^0.1.0+1
+  theme_provider: ^0.4.0+1
+  #sheets
+  ndialog: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:
